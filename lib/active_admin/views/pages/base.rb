@@ -4,7 +4,7 @@ module ActiveAdmin
       class Base < Arbre::HTML::Document
 
         def build(*args)
-          set_attribute :lang, I18n.locale
+          set_attribute :lang, I18n.locale.to_s[0, 2]
           build_active_admin_head
           build_page
         end
